@@ -1,0 +1,296 @@
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202938;
+    background: #f4f6fa;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.topbar {
+    height: 66px;
+    background: #ffffff;
+    border-bottom: 1px solid #e4e8ef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: #5b57e8;
+}
+
+.status {
+    font-size: 12px;
+    color: #28734b;
+    background: #e9f8ef;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.container {
+    width: min(850px, 92%);
+    margin: 38px auto;
+}
+
+.intro {
+    margin-bottom: 26px;
+}
+
+.eyebrow {
+    color: #5b57e8;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+}
+
+h1 {
+    font-size: clamp(28px, 5vw, 39px);
+    margin: 10px 0;
+    letter-spacing: -1.2px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.intro > p:last-child {
+    color: #687386;
+}
+
+.panel {
+    background: white;
+    border: 1px solid #e4e8ef;
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 18px rgba(20, 30, 60, 0.035);
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 19px 0 8px;
+}
+
+input:not([type="checkbox"]):not([type="file"]),
+textarea,
+select {
+    width: 100%;
+    border: 1px solid #dce1eb;
+    border-radius: 8px;
+    padding: 12px;
+    font: inherit;
+    font-size: 14px;
+    background: #fff;
+    color: #202938;
+}
+
+textarea {
+    resize: vertical;
+    line-height: 1.6;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #c6c5ff;
+    border-color: #7773ee;
+}
+
+input[type="file"] {
+    display: block;
+    max-width: 100%;
+    font-size: 13px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 13px 18px;
+    background: #5b57e8;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#generateBtn {
+    width: 100%;
+    margin-top: 25px;
+}
+
+button:hover {
+    filter: brightness(0.95);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+button.secondary {
+    background: #efefff;
+    color: #4c48c9;
+    padding: 10px 13px;
+}
+
+#statusMessage {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.error {
+    color: #bd3030;
+}
+
+.success {
+    color: #247849;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.result-heading h2 {
+    margin-bottom: 6px;
+}
+
+#paperMeta,
+.hint {
+    font-size: 13px;
+    color: #687386;
+    line-height: 1.5;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle input {
+    accent-color: #5b57e8;
+}
+
+.question-card {
+    border: 1px solid #e4e8ef;
+    border-radius: 10px;
+    padding: 17px;
+    margin-top: 14px;
+}
+
+.question-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #5b57e8;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.question-card textarea {
+    margin-top: 12px;
+    min-height: 78px;
+}
+
+.question-card ul {
+    padding-left: 22px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.option-input {
+    margin-top: 7px;
+}
+
+.answer-box {
+    background: #f1faf4;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    border-top: 1px solid #edf0f5;
+    padding: 14px 0;
+}
+
+.history-item strong {
+    font-size: 14px;
+}
+
+.history-item p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #687386;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #8790a0;
+    padding: 12px 0 30px;
+}
+
+@media (max-width: 560px) {
+    .container {
+        margin-top: 24px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .result-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .history-item {
+        align-items: flex-start;
+    }
+}

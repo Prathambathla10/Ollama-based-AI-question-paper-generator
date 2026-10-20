@@ -1,0 +1,21 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environment
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Generated and uploaded files
+uploads/*
+generated/*
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

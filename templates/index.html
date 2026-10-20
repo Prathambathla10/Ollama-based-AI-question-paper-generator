@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Question Paper Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">Paper<span>AI</span></div>
+        <span class="status">Local AI · Ollama</span>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <p class="eyebrow">AI-POWERED EXAM CREATION</p>
+            <h1>Question Paper Generator</h1>
+            <p>Turn your syllabus into a question paper in seconds.</p>
+        </section>
+
+        <section class="panel">
+            <h2>Paper settings</h2>
+
+            <form id="paperForm">
+                <label for="subject">Subject name</label>
+                <input id="subject" name="subject"
+                       placeholder="e.g. Database Management Systems"
+                       maxlength="255" required>
+
+                <label for="syllabus">Syllabus or study material</label>
+                <textarea id="syllabus" name="syllabus"
+                          rows="7"
+                          placeholder="Paste your syllabus or chapter content here..."></textarea>
+
+                <label for="syllabus_file">Or upload a syllabus PDF</label>
+                <input id="syllabus_file" name="syllabus_file"
+                       type="file" accept=".pdf,application/pdf">
+
+                <div class="form-grid">
+                    <div>
+                        <label for="question_count">Number of questions</label>
+                        <input id="question_count" name="question_count"
+                               type="number" min="1" max="30"
+                               value="10" required>
+                    </div>
+
+                    <div>
+                        <label for="total_marks">Total marks</label>
+                        <input id="total_marks" name="total_marks"
+                               type="number" min="1" max="300"
+                               value="50" required>
+                    </div>
+                </div>
+
+                <label for="difficulty">Difficulty level</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+
+                <button type="submit" id="generateBtn">
+                    Generate question paper
+                </button>
+            </form>
+
+            <p id="statusMessage" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="resultSection" class="panel hidden">
+            <div class="result-heading">
+                <div>
+                    <p class="eyebrow">GENERATED PAPER</p>
+                    <h2 id="paperTitle">Question Paper</h2>
+                    <p id="paperMeta"></p>
+                </div>
+                <button id="downloadBtn" type="button" class="secondary">
+                    Download PDF
+                </button>
+            </div>
+
+            <label class="toggle">
+                <input type="checkbox" id="showAnswers">
+                Show answer key and explanations
+            </label>
+
+            <p class="hint">
+                You can edit each question before downloading.
+            </p>
+
+            <div id="questionsContainer"></div>
+        </section>
+
+        <section class="panel">
+            <div class="result-heading">
+                <h2>Recent papers</h2>
+                <button id="refreshHistory" class="secondary" type="button">
+                    Refresh
+                </button>
+            </div>
+            <div id="historyContainer">
+                <p class="hint">Your saved papers will appear here.</p>
+            </div>
+        </section>
+
+        <footer>
+            PaperAI · Powered by Flask and Ollama
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
