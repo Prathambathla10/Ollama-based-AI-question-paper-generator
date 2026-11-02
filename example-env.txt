@@ -1,0 +1,12 @@
+
+FLASK_SECRET_KEY=
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.2:1b 
+
+(Choose any model in ollama)
+
+MYSQL_HOST=localhost
+MYSQL_PORT=3306
+MYSQL_USER=
+MYSQL_PASSWORD=
+MYSQL_DATABASE=question_paper_db
